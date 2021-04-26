@@ -15,9 +15,4 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clear() {
-    localStorage.clear();
-    this.auth.logout()
-  }
-
 }

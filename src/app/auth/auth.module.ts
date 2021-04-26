@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import {SharedModule} from "../shared/shared.module";
 import { LoginPageComponent } from './login-page/login-page.component';
 // Material:
 import {MatButtonModule} from '@angular/material/button';
@@ -17,7 +16,6 @@ import {MatInputModule} from '@angular/material/input';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    SharedModule,
     // Material:
     MatButtonModule,
     MatFormFieldModule,

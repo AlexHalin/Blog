@@ -34,6 +34,10 @@ export class LoginPageComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required]]
     });
+    if (localStorage.getItem('login') === forLogin.email && localStorage.getItem('password') === forLogin.password) {
+      this.auth.login()
+      this.router.navigate(['/main']);
+    }
   }
 
   submit() {

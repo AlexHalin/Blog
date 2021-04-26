@@ -1,0 +1,11 @@
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row>
+    <span class="spacer">{{"Hello " + login}}</span>
+    <span class="spacer">{{date | date: 'HH:mm:ss'}}</span>
+    <button
+      mat-raised-button
+      class="btn"
+      (click)="logout()"
+      [routerLink]="['/auth']">Logout</button>
+  </mat-toolbar-row>
+</mat-toolbar>
