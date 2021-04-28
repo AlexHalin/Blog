@@ -4,13 +4,35 @@ body {margin: 0; font-family: 'Raleway', sans-serif; }
 
 :root {
   --bg-color: white;
-  --main-color: #000000;
-  --btn-text-color-enable: white;
+  --main-color: black;
+
+  --text-color-white: white;
+  --text-color-black: black;
+
+  --btn-white-bg: white;
+  --btn-black-text: black;
+
+  --btn-black-bg: black;
+  --btn-white-text: white;
+
   --error-color: #ff3727;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  width: 15.5rem;
+}
+
+.btn {
+  background-color: var(--main-color);
+  color: var(--btn-white-text);
+  height: 2.5rem;
 }
 
 // login-page label and border color

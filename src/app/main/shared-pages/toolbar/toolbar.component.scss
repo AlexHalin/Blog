@@ -1,0 +1,30 @@
+.toolbar {
+  background-color: var(--main-color);
+}
+
+.wrapper {
+  display: flex;
+}
+
+.spacer {
+  flex: 1 1;
+}
+
+.name {
+  color: var(--text-color-white);
+}
+
+.time {
+  color: var(--text-color-white);
+}
+
+.title-btn {
+  background-color: var(--btn-white-bg);
+  color: var(--btn-black-text);
+}
+
+@media (max-width: 640px) {
+  .name {
+    display: none;
+  }
+}

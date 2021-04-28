@@ -4,6 +4,14 @@
 }
 .inner{
   margin: auto;
+
+  h1 {
+    padding: 0.7rem 5.8rem;
+    margin-bottom: 0;
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--text-color-white);
+  }
 }
 
 .form-container {
@@ -33,19 +41,6 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px var(--bg-color) inset;
 }
 
-.btnWrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
-  width: 15.5rem;
-}
-
-.btn {
-  background-color: var(--main-color);
-  color: var(--btn-text-color-enable);
-  height: 2.5rem;
-}
-
 .alert {
   width: 90%;
   padding: 0.4rem;
@@ -58,6 +53,7 @@ input:-webkit-autofill {
 .alert-danger {
   background: var(--error-color);
   color: #fff;
+  text-align: center;
 }
 
 

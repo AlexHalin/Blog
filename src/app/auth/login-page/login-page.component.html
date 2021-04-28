@@ -1,10 +1,13 @@
 <section class="outer">
   <form class="form-container inner" [formGroup]="form" (ngSubmit)="submit()">
-    <h1>Sign in</h1>
     <section class="form-control">
+      <h1>Sign in</h1>
       <div class="alert alert-danger" *ngIf="error$ | async as error">
         {{error}}
       </div>
+    </section>
+    <section class="form-control">
+
       <mat-form-field appearance="legacy">
         <mat-label>Email:</mat-label>
         <input class="mat-form-field" matInput type="email" formControlName="email">

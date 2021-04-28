@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    margin-left: 1rem;
+  }
+
+  button {
+    margin-right: 1rem;
+  }
+}
+
+.body {
+  p {
+    margin: 0.5rem 2.5rem 1rem;
+  }
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  span {
+    margin: 0.5rem 5rem 0.5rem;
+  }
+
+  small {
+    margin: 0 5rem 0.5rem;
+  }
+}
+
+.comment {
+  margin: 1rem;
+  max-width: 20rem;
+}
