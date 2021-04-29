@@ -4,8 +4,9 @@ export interface User {
 }
 
 export interface GetUser {
-  id: string;
-  email?: string;
+  id?: string;
+  name: string;
+  email: string;
 }
 
 export interface Post {

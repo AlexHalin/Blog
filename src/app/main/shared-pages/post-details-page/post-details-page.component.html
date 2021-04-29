@@ -1,4 +1,5 @@
 <section class="container">
+
   <div class="wrapper" *ngIf="post$ | async as post; else loading">
     <div class="title">
       <h2>{{post.title}}</h2>
@@ -7,25 +8,30 @@
         class="btn"
         [routerLink]="['/main/home']">Home</button>
     </div>
+
     <div class="body">
       <p>{{post.body}}</p>
     </div>
-    <div class="author">
-      <span>Title</span>
-      <small>@mail</small>
+
+    <div class="author" *ngIf="user$ | async as user; else loading">
+      <small>{{user.email}}</small>
+      <small>{{user.name}}</small>
     </div>
   </div>
-  <mat-card class="comment">
-    <mat-card-header>
-      <mat-card-title>@Mail</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, omnis.
-      </p>
-    </mat-card-content>
-  </mat-card>
+
+  <div *ngIf="comments$ | async as comments; else loading">
+    <mat-card class="comment" *ngFor="let comment of comments">
+      <mat-card-header>
+        <mat-card-title>{{comment.email}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{comment.body}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
 </section>
+
 <ng-template #loading>
   <p class="text-center">Загружаю пост...</p>
 </ng-template>

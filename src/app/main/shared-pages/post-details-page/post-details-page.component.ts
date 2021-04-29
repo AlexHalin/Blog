@@ -13,7 +13,8 @@ import {switchMap} from "rxjs/operators";
 export class PostDetailsPageComponent implements OnInit {
 
   post$: Observable<Post>;
-  // user$: Observable<GetUser[]>
+  user$: Observable<GetUser>
+  comments$: Observable<any>
 
   constructor(
     private route: ActivatedRoute,
@@ -27,9 +28,14 @@ export class PostDetailsPageComponent implements OnInit {
         return this.postsService.getById(params['id']);
       }));
 
-    // this.user$ = this.route.params
-    //   .pipe(switchMap((params: Params) => {
-    //     return this.postsService.getUser(params['id']);
-    //   }));
+    this.user$ = this.route.params
+      .pipe(switchMap((params: Params) => {
+        return this.postsService.getUser(params['id']);
+      }));
+
+    this.comments$ = this.route.params
+      .pipe(switchMap((params: Params) => {
+        return this.postsService.getComments(params['id']);
+      }));
   }
 }
