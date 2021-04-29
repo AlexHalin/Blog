@@ -43,3 +43,12 @@
   margin: 1rem;
   max-width: 20rem;
 }
+
+@media (max-width: 425px) {
+  .comment {
+    margin: 1rem 0;
+  }
+  .mat-card {
+    padding: 10px;
+  }
+}

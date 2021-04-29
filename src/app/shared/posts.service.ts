@@ -12,16 +12,19 @@ export class PostsService {
     return this.http.get<Post[]>(`https://jsonplaceholder.typicode.com/posts`)
   }
 
+  // getAll(start, limit): Observable<Post[]> {
+  //   return this.http.get<Post[]>(`https://jsonplaceholder.typicode.com/posts?_start=${start}&_limit=${limit}`)
+  // }
+
   getById(id: string): Observable<Post> {
-    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${+id + 1}`)
+    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`)
   }
 
   getUser(id: string): Observable<GetUser> {
-    return this.http.get<GetUser>(`https://jsonplaceholder.typicode.com/users/${+id + 1}`)
+    return this.http.get<GetUser>(`https://jsonplaceholder.typicode.com/users/${id}`)
   }
 
   getComments(id: string): Observable<GetUser[]> {
-    return this.http.get<GetUser[]>(`https://jsonplaceholder.typicode.com/posts/${+id + 1}/comments`)
-
+    return this.http.get<GetUser[]>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
   }
 }

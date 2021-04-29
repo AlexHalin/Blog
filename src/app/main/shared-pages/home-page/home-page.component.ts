@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterContentInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Observable, Subscription} from "rxjs";
 import {Post} from "../../../shared/interfaces";
 import {PostsService} from "../../../shared/posts.service";
@@ -10,31 +10,38 @@ import {MatTableDataSource} from "@angular/material/table";
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit, OnDestroy {
+export class HomePageComponent implements OnInit, AfterContentInit, OnDestroy {
 
   posts$: Observable<Post[]>;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  obs: Observable<any>;
-  dataSource: MatTableDataSource<any> = new MatTableDataSource();
+  // dataSource: any;
+  // users: any[];
+
+  // @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
     private postsService: PostsService,
-    private changeDetectorRef: ChangeDetectorRef
   ) {
   }
 
   ngOnInit() {
     this.posts$ = this.postsService.getAll();
 
-    this.changeDetectorRef.detectChanges();
-    this.dataSource.paginator = this.paginator;
-    this.obs = this.dataSource.connect();
+    // this.postsService.getAll().subscribe(results => {
+    //   this.users = results;
+    //   this.dataSource = new MatTableDataSource(this.users);
+    //   this.dataSource.paginator = this.paginator;
+    // });
+  }
+
+  ngAfterContentInit() {
+  //   this.dataSource = new MatTableDataSource(this.users);
+  //   this.dataSource.paginator = this.paginator;
   }
 
   ngOnDestroy() {
-    if (this.dataSource) {
-      this.dataSource.disconnect();
-    }
+    // if (this.dataSource) {
+    //   this.dataSource.disconnect();
+    // }
   }
 }
