@@ -1,7 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Post} from "../../../shared/interfaces";
 
-
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -16,6 +15,4 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
 }

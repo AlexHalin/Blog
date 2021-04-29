@@ -22,7 +22,6 @@ export class ToolbarComponent implements OnInit {
     setInterval(() => {
       this.date = new Date()
     }, 1);
-
   }
 
   logout() {

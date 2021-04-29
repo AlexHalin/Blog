@@ -9,8 +9,15 @@ export class AuthService {
 
   constructor() {}
 
+  isLogged() {
+    return localStorage.getItem('login') && localStorage.getItem('password');
+  }
+
   login() {
-    this.isLoggedIn = true;
+    if (localStorage.getItem('login') && localStorage.getItem('password') ) {
+      this.isLoggedIn = true;
+    }
+
   }
 
   logout() {

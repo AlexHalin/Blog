@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (!this.auth.isLoggedIn) {
+    if (!this.auth.isLogged()) {
       return this.router.createUrlTree(
         ['/auth']
       );
@@ -19,6 +19,5 @@ export class AuthGuard implements CanActivate {
       return true;
     }
   }
-
 }
 

@@ -11,7 +11,7 @@ export class UnauthGuard implements CanActivate {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (!this.auth.isLoggedIn) {
+    if (!this.auth.isLogged()) {
 
       return true;
     } else {
